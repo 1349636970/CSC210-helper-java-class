@@ -1,6 +1,8 @@
 # CSC210-helper-java-class
 This helper class provide the Scanner input with validation and get array index.
-// Helper myHelper = new Helper();
+
+
+        // Helper myHelper = new Helper();
         // Ask user for input int
         // If you want the user enter the number only greater than 0
         // System.out.print("Ask user for input int: ");
