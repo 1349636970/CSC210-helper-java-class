@@ -1,5 +1,6 @@
 # CSC210-helper-java-class
 This helper class provide the Scanner input with validation and get array index.
+There is some example in the text.java file.
 
 
         // Helper myHelper = new Helper();
