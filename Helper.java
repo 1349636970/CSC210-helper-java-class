@@ -88,7 +88,7 @@ public class Helper {
     }
 
     /**
-     * I used Math.abs(result-greaterNumber) > 0.001 to compare the double number because sometimes they will not equal even they are actually equal. For example, there is a number 79.800000000001. If you try to compare this number to 79.8 the computer will tell you they are not equal. But they are actually equal. The way that the computer storage decimals number is not 100% accurate. I will do. Math.abs(79.8-79.80000000001) < 0.001 to check if they are equal
+     * 
      * @param errorMessage
      * @param smallerNumber
      * @param greaterNumber
@@ -99,8 +99,8 @@ public class Helper {
         double result = 0.0;
         while (!validation) {
             try {
-                result = input.nextInt();
-                if (Math.abs(result-greaterNumber) > 0.001 || Math.abs(result-smallerNumber) < 0.001) {
+                result = input.nextDouble();
+                if (result > greaterNumber || result < smallerNumber) {
                     System.out.println("Plz enter the number between "+smallerNumber+" and "+greaterNumber);
                     continue;
                 }
@@ -118,8 +118,8 @@ public class Helper {
         double result = 0.0;
         while (!validation) {
             try {
-                result = input.nextInt();
-                if (Math.abs(result-smallerNumber) < 0.001) {
+                result = input.nextDouble();
+                if (result < smallerNumber) {
                     System.out.println("Plz enter the number greater than "+smallerNumber);
                     continue;
                 }
@@ -164,6 +164,14 @@ public class Helper {
         return result;
     }
 
+
+    /**
+     * I used MMath.abs(array[counter]-element) < 0.001 to compare the double number because sometimes they will not equal even they are actually equal. For example, there is a number 79.800000000001. If you try to compare this number to 79.8 the computer will tell you they are not equal. But they are actually equal. The way that the computer storage decimals number is not 100% accurate. I will do. Math.abs(79.8-79.80000000001) < 0.001 to check if they are equal
+     * @param array
+     * @param element
+     * @param startIndex
+     * @return
+     */
     public int getArrayIndex(double[] array, double element,int startIndex) {
         int result; 
         int counter = startIndex;
