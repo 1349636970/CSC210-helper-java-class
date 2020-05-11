@@ -1,4 +1,4 @@
-//package app;
+package app;
 
 import java.util.Scanner;
 
@@ -13,6 +13,8 @@ public class Helper {
 
 
 
+
+
     /**
      * This method will ask user for a String and catch all the error message.
      * If there is a error message, the program will print it out your customize error message and ask the user enter again
@@ -20,6 +22,28 @@ public class Helper {
      * @param errorMessage
      * @return String the User input
      */
+
+    public char inputChar(String errorMessage,char correctChar,char wrongChar) {
+        boolean validation = false;
+        String userInputString = null;
+        char result = '\u0000';
+        while (!validation) {
+            try {
+                userInputString = input.next();
+                result = userInputString.length() == 1 ? Character.toUpperCase(userInputString.charAt(0)) : '0';
+                if (result == '0' || (result != correctChar && result != wrongChar)) {
+                    System.out.println("Plz only enter "+correctChar+" or "+ wrongChar);
+                    continue;
+                }
+                validation = true;
+            } catch (Exception e) {
+                System.out.println(errorMessage);
+                input.next();//Clean the input, or it will goes to infinity loop
+            }
+        }
+        return result;
+    }
+
 
     public String inputString(String errorMessage) {
         boolean validation = false;
